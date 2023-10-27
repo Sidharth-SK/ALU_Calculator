@@ -17,6 +17,17 @@ char keys[ROWS][COLS] = {
 
 };
 
+Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS  ); //  Create the Keypad
+LiquidCrystal_I2C lcd(0x27, 16, 4);
+ long Num1,Num2,Number;
+ char key,action;
+ boolean result  = false;
+
+const int button1 = 8;  // the number of the pushbutton pin
+const int button2 = 9;  // the number of the pushbutton pin
+int button1State = 0;  // variable for reading the pushbutton status
+int button2State = 0;  // variable for reading the pushbutton status
+
 
 const int button1 = 8;  // the number of the pushbutton pin
 const int button2 = 9;  // the number of the pushbutton pin
