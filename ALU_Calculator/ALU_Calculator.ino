@@ -49,3 +49,22 @@ void loop() {
   DisplayResult();
 }
 
+
+void CalculateResult() 
+{
+  if (action == '+')
+    Number = Num1 + Num2;
+  if (action == '-')
+    Number = Num1 - Num2;
+  if (action == '*')
+    Number = Num1 * Num2;
+  if (action == '/')
+    Number = Num1 / Num2;
+  if (action == '&') // Logical AND
+    Number = Num1 & Num2;
+  if (action == '|') // Logical OR
+    Number = Num1 | Num2;
+  if (action == '^') // Logical XOR
+    Number = Num1 ^ Num2;
+}
+
