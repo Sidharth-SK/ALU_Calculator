@@ -59,7 +59,24 @@ void loop() {
 
   DisplayResult();
 }
+void arithmetic()
+{
+  if (key ==  'A' || key == 'B' || key == 'C' || key == 'D') //Detecting Buttons on Column 4
+  {
+    Num1 = Number;    
+    Number =0;
+    if (key == 'A')
+    {Serial.println  ("Addition"); action = '+';}
+     if (key == 'B')
+    {Serial.println ("Subtraction");  action = '-'; }
+     if (key == 'C')
+    {Serial.println ("Multiplication");  action = '*';}
+     if (key == 'D')
+    {Serial.println ("Devesion"); action  = '/';}  
 
+    delay(100);
+  }
+}
 void  DetectButtons()
 { 
      lcd.clear(); //Then clean it
