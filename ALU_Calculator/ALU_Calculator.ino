@@ -18,19 +18,22 @@ char keys[ROWS][COLS] = {
 };
 byte rowPins[ROWS]  = { 0, 1, 2, 3 };// Connect keypad ROW0, ROW1, ROW2 and ROW3 to these Arduino pins.
 byte  colPins[COLS] = { 4, 5, 6, 7 }; // Connect keypad COL0, COL1 and COL2 to these Arduino  pins.
+//  Create the Keypad
+Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS  ); 
 
-Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS  ); //  Create the Keypad
+//Define LCD
 LiquidCrystal_I2C lcd(0x27, 16, 4);
- long Num1,Num2,Number;
+
+//Define variables used 
+long Num1,Num2,Number;
  char key,action;
  boolean result  = false;
 
+//Define digital buttons
 const int button1 = 8;  // the number of the pushbutton pin
 const int button2 = 9;  // the number of the pushbutton pin
 int button1State = 0;  // variable for reading the pushbutton status
 int button2State = 0;  // variable for reading the pushbutton status
-
-
 const int button1 = 8;  // the number of the pushbutton pin
 const int button2 = 9;  // the number of the pushbutton pin
 int button1State = 0;  // variable for reading the pushbutton status
@@ -61,6 +64,7 @@ void loop() {
 
   DisplayResult();
 }
+
 void arithmetic()
 {
   if (key ==  'A' || key == 'B' || key == 'C' || key == 'D') //Detecting Buttons on Column 4
@@ -79,6 +83,7 @@ void arithmetic()
     delay(100);
   }
 }
+
 void logical()
 {
   if (key ==  'A' || key == 'B' || key == 'C') //Detecting Buttons on Column 4
@@ -95,6 +100,7 @@ void logical()
     delay(100);
   }
 }
+
 void  DetectButtons()
 { 
      lcd.clear(); //Then clean it
@@ -242,4 +248,3 @@ bool ButtonPush(){
     return false;
   }
 }
-
