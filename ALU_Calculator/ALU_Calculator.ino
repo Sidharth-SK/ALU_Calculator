@@ -77,6 +77,22 @@ void arithmetic()
     delay(100);
   }
 }
+void logical()
+{
+  if (key ==  'A' || key == 'B' || key == 'C') //Detecting Buttons on Column 4
+  {
+    Num1 = Number;    
+    Number =0;
+    if (key == 'A')
+    {Serial.println  ("AND"); action = '&';}
+     if (key == 'B')
+    {Serial.println ("OR");  action = '|'; }
+     if (key == 'C')
+    {Serial.println ("XOR");  action = '^';} 
+
+    delay(100);
+  }
+}
 void  DetectButtons()
 { 
      lcd.clear(); //Then clean it
