@@ -173,3 +173,27 @@ void CalculateResult()
     Number = Num1 ^ Num2;
 }
 
+
+void DisplayResult()
+{
+  lcd.setCursor(0,2);   // set the cursor to column 0, line 1
+  lcd.print(Num1); lcd.print(action);  lcd.print(Num2); 
+  
+  if (result==true)
+  {lcd.print(" ="); lcd.print(Number);}  //Display the result
+  
+  lcd.setCursor(0, 3);   // set the cursor to column  0, line 1
+  lcd.print(Number); //Display the result
+}
+
+bool ButtonPush(){
+  button1State = digitalRead(button1);
+  button2State = digitalRead(button2);
+  if (button1State == HIGH && button2State == LOW){
+    return true;
+  }
+  if (button1State == LOW && button2State == HIGH){
+    return false;
+  }
+}
+
