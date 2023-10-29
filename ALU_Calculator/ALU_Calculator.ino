@@ -86,7 +86,7 @@ void arithmetic()
 
 void logical()
 {
-  if (key ==  'A' || key == 'B' || key == 'C') //Detecting Buttons on Column 4
+  if (key ==  'A' || key == 'B' || key == 'C' || key == 'D') //Detecting Buttons on Column 4  
   {
     Num1 = Number;    
     Number =0;
@@ -95,7 +95,9 @@ void logical()
      if (key == 'B')
     {Serial.println ("OR");  action = '|'; }
      if (key == 'C')
-    {Serial.println ("XOR");  action = '^';} 
+    {Serial.println ("XOR");  action = '^';}
+    if (key == 'D')
+    {Serial.println ("NOR"); action  = '~';}
 
     delay(100);
   }
@@ -223,18 +225,20 @@ void CalculateResult()
     Number = Num1 | Num2;
   if (action == '^') // Logical XOR
     Number = Num1 ^ Num2;
+  if (action == '~') // Logical XOR
+    Number = ~(Num1 | Num2);
 }
 
 
 void DisplayResult()
 {
-  lcd.setCursor(0,2);   // set the cursor to column 0, line 1
+  lcd.setCursor(0,2);
   lcd.print(Num1); lcd.print(action);  lcd.print(Num2); 
   
   if (result==true)
   {lcd.print(" ="); lcd.print(Number);}  //Display the result
   
-  lcd.setCursor(0, 3);   // set the cursor to column  0, line 1
+  lcd.setCursor(0, 3);   
   lcd.print(Number); //Display the result
 }
 
