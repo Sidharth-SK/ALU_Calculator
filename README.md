@@ -2,7 +2,7 @@
 Prototyping an Arduino Due to perform basic ALU operations
 
 
-This Arduino code implements a simple calculator using a 4x4 keypad and a 16x2 LCD display. The calculator performs basic arithmetic and logical operations based on the user input from the keypad. Here's a brief explanation of how the code works:
+This Arduino code implements a simple calculator using a 4x4 keypad and a 16x4 LCD display. The calculator performs basic arithmetic and logical operations based on the user input from the keypad. Here's a brief explanation of how the code works:
 
 1. **Libraries:** The code includes necessary libraries for handling the keypad and LCD display.
 2. **Keymap:** Defines the layout of the keypad, mapping the keys to characters in a 4x4 matrix.
